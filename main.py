@@ -9,12 +9,12 @@ def index():
         session['count'] +=1
     return render_template('index.html', count=session['count'])
 
-@app.route('/two', methods=['POST'])
+@app.route('/two')
 def add_two():
     session['count'] +=1
     return redirect('/')
 
-@app.route('/destroy_session', methods=['POST'])
+@app.route('/destroy_session')
 def delete():
     session['count']=0
     return redirect('/')
